@@ -1,0 +1,20 @@
+<div class="bg-white w-full h-full">
+    <form [formGroup]="ObjectForm" class="grid p-8 gap-8">
+      <p class="text-center">Edit Item</p>
+      <div class="flex gap-8">
+        <input type="number" placeholder="Id" formControlName="elementobjectid" />
+        <input type="text" placeholder="Name" formControlName="elementTittle"/>
+      </div>
+      <input type="text" placeholder="Description" formControlName="elementDescription"/>
+      <input type="text" placeholder="Customer" formControlName="elementCustomer"/>
+      <div class="flex">
+        <input type="number" placeholder="Price" formControlName="elementPrice"/>
+        <input type="number" placeholder="Stock" formControlName="elementStock"/>
+      </div>
+  </form>
+    <div class="flex gap-20 justify-center">
+      <button class="bg-green-400 rounded-lg p-2 mb-8 hover:cursor-pointer" (click)="updatebject()">Check Edit</button>
+      <button class="bg-red-400 rounded-lg p-2 mb-8 hover:cursor-pointer" (click)="cancel()">Cancel</button>
+    </div>
+  </div>
+  
