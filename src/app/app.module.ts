@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { NavigationModule } from 'src/shared/navigation/navigation.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
+import { PrincipalPage } from 'src/shadowuser/principal-page/principal-page.module';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     HttpClientModule,
     AppRoutingModule,
     NavigationModule,
+    PrincipalPage,
     MatDialogModule,
     BrowserAnimationsModule
   ],
