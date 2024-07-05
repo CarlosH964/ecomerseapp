@@ -14,6 +14,7 @@ import { CommonModule } from '@angular/common';
 })
 export class ModalCreateComponent {
   ObjectForm: FormGroup;
+  base64Image: string | null = null;
 
   constructor(
     private fb: FormBuilder,
@@ -21,13 +22,27 @@ export class ModalCreateComponent {
     private dialogRef: MatDialogRef<ModalCreateComponent>
   ){
     this.ObjectForm = this.fb.group({
-      objectId: [''],
       name: [''],
       description: [''],
       customer: [''],
       price: [''],
       stock: [''],
+      img: ['']
     });
+  }
+
+  onFileChange(event: any) {
+    const reader = new FileReader();
+    if(event.target.files && event.target.files.length) {
+      const [file] = event.target.files;
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        this.base64Image = reader.result as string;
+        this.ObjectForm.patchValue({
+          img: this.base64Image
+        });
+      };
+    }
   }
 
   addObject(){

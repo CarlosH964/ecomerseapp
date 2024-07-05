@@ -11,6 +11,13 @@
         <input type="number" placeholder="Price" formControlName="elementPrice"/>
         <input type="number" placeholder="Stock" formControlName="elementStock"/>
       </div>
+      <div>
+        <input type="file" (change)="onFileChange($event)" accept="image/*">
+        <ng-container *ngIf="ObjectForm.value.elementImg">
+          <p>Imagen actual:</p>
+          <img [src]="ObjectForm.value.elementImg" alt="Current Image" class="w-32 h-32 object-cover mb-4">
+        </ng-container>
+      </div>
   </form>
     <div class="flex gap-20 justify-center">
       <button class="bg-green-400 rounded-lg p-2 mb-8 hover:cursor-pointer" (click)="updatebject()">Check Edit</button>

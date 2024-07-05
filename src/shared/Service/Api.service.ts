@@ -10,6 +10,7 @@ export interface ElementItem {
     customer: string;
     price: number;
     stock: number;
+    img: string; 
   }
   
 

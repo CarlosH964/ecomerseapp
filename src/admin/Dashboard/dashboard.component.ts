@@ -3,8 +3,6 @@ import { ApiService, ElementItem } from '../../shared/Service/Api.service';
 import { ModalCreateComponent } from '../modal-create/modal-create.component';
 import { ModalEditComponent } from '../modal-edit/modal-edit.component';
 import { MatDialog } from '@angular/material/dialog';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
 
 
 @Component({
@@ -39,7 +37,6 @@ export class DashboardComponent implements OnInit {
   deleteObject(id: number): void {
     this.apiService.deleteObject(id).subscribe(
       (response) => {
-        console.log(response);
         console.log('Object deleted successfully', response);
         this.GetData();
       },
